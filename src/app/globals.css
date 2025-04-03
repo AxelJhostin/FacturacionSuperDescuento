@@ -1,26 +1,40 @@
-@import "tailwindcss";
+/* Fuente principal */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Paleta de colores */
+  --color-primary: #FF6B00; /* Naranja principal */
+  --color-secondary: #FFD700; /* Dorado */
+  --color-dark: #1A1A1A; /* Textos */
+  --color-light: #FFF8F0; /* Fondo */
+  --color-error: #D32F2F; /* Errores */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Reset básico */
+h1, h2, h3, p {
+  margin: 0;
+}
+
+/* Estilos para enlaces y botones */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Animaciones */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
 }

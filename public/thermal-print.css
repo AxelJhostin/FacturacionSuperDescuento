@@ -1,0 +1,21 @@
+/* thermal-print.css */
+@page {
+    size: 80mm auto;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    width: 80mm !important;
+    margin: 0 !important;
+    padding: 5mm !important;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    background: white !important;
+    color: black !important;
+  }
+  
+  /* Oculta elementos no deseados */
+  body > *:not(#invoice-print) {
+    display: none !important;
+  }

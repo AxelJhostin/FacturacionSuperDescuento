@@ -1,0 +1,113 @@
+.page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .app-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #FF6B00;
+  }
+  
+  .app-header h1 {
+    font-size: 2rem;
+  }
+  
+  .upload-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .upload-button {
+    display: inline-block;
+    background: #FF6B00;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+  }
+  
+  .upload-button:hover {
+    background: #E05D00;
+    transform: translateY(-2px);
+  }
+  
+  .file-input {
+    display: none;
+  }
+  
+  .file-name {
+    margin-top: 10px;
+    color: #666;
+  }
+  
+  .error-message {
+    color: #D32F2F;
+    margin-top: 10px;
+  }
+  
+  .invoice-section {
+    margin-top: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .toggle-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .factura-preview {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .print-button, .pdf-button {
+    display: inline-block;
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+  }
+  
+  .print-button {
+    background: #2196F3;
+  }
+  
+  .pdf-button {
+    background: #4CAF50;
+  }
+  
+  .print-button:hover {
+    background: #0b7dda;
+  }
+  
+  .pdf-button:hover {
+    background: #3e8e41;
+  }
