@@ -1,5 +1,10 @@
 import './globals.css'
 
+export const metadata = {
+  title: 'Sistema de Facturación',
+  description: 'Generador de facturas térmicas',
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -7,7 +12,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className="antialiased">
+        {children}
+      </body>
     </html>
   )
 }

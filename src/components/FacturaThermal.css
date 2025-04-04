@@ -1,4 +1,4 @@
-/* thermal-print.css */
+/* thermal-print.css - Versión Optimizada */
 .factura-container {
   width: 80mm;
   min-height: 100mm;
@@ -15,11 +15,14 @@
   print-color-adjust: exact;
 }
 
+/* ==================== */
+/* Encabezado */
+/* ==================== */
 .factura-header {
   text-align: center;
   margin-bottom: 8px;
   padding-bottom: 6px;
-  border-bottom: 2px dashed #1a1a1a;
+  border-bottom: 2px dashed #333;
 }
 
 .factura-header h1 {
@@ -40,14 +43,18 @@
   margin: 3px 0;
 }
 
+/* ==================== */
+/* Divisores y secciones */
+/* ==================== */
 .divider {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #333;
   margin: 8px 0;
   height: 0;
 }
 
 .section {
   margin: 10px 0;
+  padding: 0 1mm; /* Añadido para mejor espaciado */
 }
 
 .section h2 {
@@ -56,34 +63,44 @@
   text-align: center;
   margin: 6px 0;
   padding-bottom: 3px;
-  border-bottom: 1px solid #080808;
+  border-bottom: 1px solid #333;
   text-transform: uppercase;
 }
 
 .section-grid {
   display: grid;
-  grid-template-columns: 30% 70%;
-  gap: 4px 6px;
+  grid-template-columns: 32% 68%; /* Ajustado para más espacio */
+  gap: 2px 6px; /* Reducido gap horizontal */
   font-size: 12px;
+  word-break: break-word;
 }
 
 .section-grid > div:nth-child(odd) {
   font-weight: 600;
 }
 
-.clave-acceso {
-  word-break: break-all;
-  font-size: 11px;
+/* ==================== */
+/* Campos largos (Clave, Email, ID) - NUEVO ESTILO */
+/* ==================== */
+.clave-acceso,
+.client-id,
+.client-email,
+.client-name {
+  word-break: break-all !important;
   font-family: monospace;
-  color: #000000;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+  display: block;
+  max-width: 100%;
 }
 
-.client-name,
-.client-id {
-  word-break: break-all;
-  font-size: 12px;
+.client-email {
+  letter-spacing: -0.3px; /* Compactar caracteres */
 }
 
+/* ==================== */
+/* Tabla de productos */
+/* ==================== */
 .products-table {
   width: 100%;
   border-collapse: collapse;
@@ -95,23 +112,22 @@
 .products-table th, 
 .products-table td {
   padding: 5px 2mm;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #333;
   vertical-align: top;
-  overflow: visible;
-  white-space: nowrap;
 }
 
 .products-table th {
-  background-color: #f5f5f5;
+  background-color: #f0f0f0;
   font-weight: 800;
-  border-bottom: 2px solid #171717;
+  border-bottom: 2px solid #333;
   text-align: left;
 }
 
+/* Columnas */
 .products-table td:nth-child(1) {
-  width: 48%;
-  word-break: break-word;
+  width: 55%; /* Más espacio para descripciones */
   white-space: normal;
+  word-break: break-word;
 }
 
 .products-table td:nth-child(2) {
@@ -123,9 +139,11 @@
 .products-table td:nth-child(4) {
   width: 21%;
   text-align: right;
-  letter-spacing: 0.5px;
 }
 
+/* ==================== */
+/* Estilos de productos */
+/* ==================== */
 .product-desc {
   font-weight: 600;
   display: flex;
@@ -139,17 +157,14 @@
 
 .product-additional {
   font-size: 11px;
-  color: #242424;
+  color: #333;
   font-style: italic;
   margin-top: 2px;
-  line-height: 1.2;
 }
 
-.money-value {
-  font-family: 'Courier New', monospace;
-  letter-spacing: 0.5px;
-}
-
+/* ==================== */
+/* Totales */
+/* ==================== */
 .totals-section {
   margin-top: 12px;
 }
@@ -166,21 +181,23 @@
   font-size: 14px;
   margin-top: 10px;
   padding-top: 8px;
-  border-top: 2px solid #0c0c0c;
+  border-top: 2px solid #333;
 }
 
+/* ==================== */
+/* Pie de página */
+/* ==================== */
 .receipt-footer {
   text-align: center;
   margin-top: 15px;
   font-size: 12px;
   padding-top: 8px;
-  border-top: 1px dashed #121212;
+  border-top: 1px dashed #333;
 }
 
 .payment-methods {
   margin: 8px 0;
   font-style: italic;
-  color: #222222;
 }
 
 .footer-message {
@@ -188,18 +205,15 @@
   line-height: 1.4;
 }
 
-.footer-notice {
+.footer-notice, 
+.footer-details {
   font-size: 11px;
   margin: 5px 0;
-  color: #1c1c1c;
 }
 
-.footer-details {
-  margin-top: 15px;
-  font-size: 11px;
-  color: #2d2d2d;
-}
-
+/* ==================== */
+/* Media Queries para impresión */
+/* ==================== */
 @media print {
   @page {
     size: 80mm auto;
@@ -210,8 +224,6 @@
   body {
     margin: 0 !important;
     padding: 0 !important;
-    display: flex;
-    justify-content: center;
     width: 80mm !important;
   }
   
@@ -232,12 +244,21 @@
   .divider,
   .section h2,
   .products-table th,
+  .products-table td,
   .grand-total,
   .receipt-footer {
-    border-color: #000 !important;
+    border-color: #333 !important;
   }
 
   .products-table th {
-    background-color: #f5f5f5 !important;
+    background-color: #f0f0f0 !important;
+  }
+
+  /* Asegurar que los campos largos se rompan al imprimir */
+  .clave-acceso,
+  .client-id,
+  .client-email {
+    word-break: break-all !important;
+    white-space: pre-wrap !important;
   }
 }

@@ -46,15 +46,7 @@ const FacturaThermal: React.FC<{ data: FacturaPDFData }> = ({ data }) => {
   const { Email, Telefono, ...otrosCampos } = data.infoAdicional
 
   return (
-    <div 
-      className="factura-container"
-      style={{
-        margin: '0 auto',
-        width: '80mm',
-        minHeight: '100mm',
-        boxSizing: 'border-box'
-      }}
-    >
+    <div className="factura-container">
       <header className="factura-header">
         <h1>{data.nombreComercial}</h1>
         <div className="store-info">
@@ -118,7 +110,7 @@ const FacturaThermal: React.FC<{ data: FacturaPDFData }> = ({ data }) => {
       <table className="products-table">
         <thead>
           <tr>
-            <th style={{ width: '48%' }}>Descripción</th>
+            <th style={{ width: '50%' }}>Descripción</th>
             <th style={{ width: '12%' }}>Cant.</th>
             <th style={{ width: '19%' }}>P.Unit.</th>
             <th style={{ width: '21%' }}>Total</th>
@@ -176,8 +168,7 @@ const FacturaThermal: React.FC<{ data: FacturaPDFData }> = ({ data }) => {
         </div>
         <div className="footer-details">
           <p>Software desarrollado por H.Axel</p>
-          <p>{new Date().toLocaleDateString('es-EC')} - {new Date().toLocaleTimeString('es-EC', { hour: '2-digit', minute: '2-digit' })}</p>
-        </div>
+          </div>
       </footer>
     </div>
   )

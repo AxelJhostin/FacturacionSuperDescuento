@@ -1,15 +1,17 @@
-/* Fuente principal */
+/* globals.css - Versión integrada */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 
 :root {
   /* Paleta de colores */
-  --color-primary: #FF6B00; /* Naranja principal */
-  --color-secondary: #FFD700; /* Dorado */
-  --color-dark: #1A1A1A; /* Textos */
-  --color-light: #FFF8F0; /* Fondo */
-  --color-error: #D32F2F; /* Errores */
+  --color-primary: #FF6B00;
+  --color-secondary: #FFD700;
+  --color-dark: #1A1A1A;
+  --color-light: #FFF8F0;
+  --color-error: #D32F2F;
 }
 
+/* Estilos generales */
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--color-light);
@@ -26,7 +28,7 @@ h1, h2, h3, p {
   margin: 0;
 }
 
-/* Estilos para enlaces y botones */
+/* Transiciones */
 a, button {
   transition: all 0.3s ease;
 }
@@ -37,4 +39,58 @@ a, button {
 }
 .animate-spin {
   animation: spin 1s linear infinite;
+}
+
+/* ============================================= */
+/* Estilos específicos para facturación térmica */
+/* ============================================= */
+
+.print-mode {
+  font-family: 'Courier Prime', monospace !important;
+  background: white !important;
+  color: black !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+@media print {
+  @page {
+    size: 80mm auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    width: 80mm !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 5mm !important;
+    background: white !important;
+    font-family: 'Courier Prime', monospace !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Oculta todo excepto la factura */
+  body > *:not(#factura-print) {
+    display: none !important;
+  }
+
+  /* Asegura que la factura ocupe todo el ancho */
+  #factura-print, .factura-container {
+    width: 80mm !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    visibility: visible !important;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+  }
+}
+
+/* Clase utilitaria para impresión térmica */
+.thermal-font {
+  font-family: 'Courier Prime', monospace;
 }
