@@ -13,6 +13,32 @@
   box-sizing: border-box;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
+  font-weight: bold; /*Negrita*/
+}
+
+/* Asegurar negrita en todos los textos */
+.factura-header h1,
+.store-info p,
+.section h2,
+.section-grid,
+.section-grid > div,
+.products-table th,
+.products-table td,
+.product-desc,
+.product-name,
+.product-additional,
+.total-row,
+.grand-total,
+.receipt-footer,
+.payment-methods,
+.footer-message,
+.footer-notice,
+.footer-details,
+.clave-acceso,
+.client-id,
+.client-email,
+.client-name {
+  font-weight: bold !important; /* <- NEGRITA FORZADA */
 }
 
 /* ==================== */
@@ -22,7 +48,7 @@
   text-align: center;
   margin-bottom: 8px;
   padding-bottom: 6px;
-  border-bottom: 2px dashed #333;
+  border-bottom: 2px dashed #000000;
 }
 
 .factura-header h1 {
@@ -47,7 +73,7 @@
 /* Divisores y secciones */
 /* ==================== */
 .divider {
-  border-top: 1px solid #333;
+  border-top: 1px solid #000000;
   margin: 8px 0;
   height: 0;
 }
@@ -63,7 +89,7 @@
   text-align: center;
   margin: 6px 0;
   padding-bottom: 3px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #000000;
   text-transform: uppercase;
 }
 
@@ -112,14 +138,14 @@
 .products-table th, 
 .products-table td {
   padding: 5px 2mm;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #000000;
   vertical-align: top;
 }
 
 .products-table th {
   background-color: #f0f0f0;
   font-weight: 800;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid #000000;
   text-align: left;
 }
 
@@ -157,7 +183,7 @@
 
 .product-additional {
   font-size: 11px;
-  color: #333;
+  color: #000000;
   font-style: italic;
   margin-top: 2px;
 }
@@ -181,7 +207,7 @@
   font-size: 14px;
   margin-top: 10px;
   padding-top: 8px;
-  border-top: 2px solid #333;
+  border-top: 2px solid #000000;
 }
 
 /* ==================== */
@@ -192,7 +218,7 @@
   margin-top: 15px;
   font-size: 12px;
   padding-top: 8px;
-  border-top: 1px dashed #333;
+  border-top: 1px dashed #000000;
 }
 
 .payment-methods {
@@ -247,7 +273,7 @@
   .products-table td,
   .grand-total,
   .receipt-footer {
-    border-color: #333 !important;
+    border-color: #000000 !important;
   }
 
   .products-table th {
