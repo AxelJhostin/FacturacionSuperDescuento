@@ -167,7 +167,7 @@ const FacturaThermal: React.FC<{ data: FacturaPDFData }> = ({ data }) => {
           <p>¡Gracias por su compra!</p>
         </div>
         <div className="footer-details">
-          <p>Software desarrollado por H.Axel</p>
+          <p>Software</p>
           </div>
       </footer>
     </div>
